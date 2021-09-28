@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+</body>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const rootEl=document.getElementById("root");
+
+  // const Text = (props) => {
+  //     return <div>This is rendered {props.children}</div>;
+  // }
+  // {Text({children:"Touhidul islam"})}
+  //
+  // <Text>Samadhan Solution Pty Ltd</Text>
+
+  const Link = (props) => {
+    return <a href={props.link}>{props.text}</a>
+  }
+
+  const Link2 = (props) => {
+    return <a href={props.link}>{props.children}</a>
+  }
+
+  const Link3 = ({link,children}) => {
+    return <a href={link}>{children}</a>
+  }
+
+  const textEl=<div>
+
+    <Link link={'https:www.facebook.com'} text={'Facbook'}/>
+    <div></div>
+    <Link2 link={'https:www.youtube.com'} >Youtube</Link2>
+    <div></div>
+    <Link3 link={'https:www.gmail.com'} >Gmail</Link3>
+  </div>;
+
+  ReactDOM.render(textEl,rootEl);
+</script>
+</html>
